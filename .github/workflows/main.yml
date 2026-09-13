@@ -1,1 +1,33 @@
+name: Scheduled Market Alert
 
+on:
+  schedule:
+    - cron: '0 10 * * 1-5' # Runs at 10:00 UTC, Monday through Friday
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  analyze-and-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4 #
+
+      - name: Set up Python
+        uses: actions/setup-python@v4 #
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt #
+
+      - name: Run Market Alert Script
+        env:
+          # You must map EVERY required key from your .env files here
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # Example: If your code needs an OpenAI key, uncomment the line below
+          # OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python market_alert.py
