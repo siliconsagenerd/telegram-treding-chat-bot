@@ -1,0 +1,11 @@
+node_modules/
+.venv/
+venv/
+*.pyc
+__pycache__/
+.idea/
+.DS_Store
+.env
+.market_alert.env
+stock_data/
+cache/

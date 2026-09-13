@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.derivatives.scanner.alerts</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/vishrutpandeymacbook/Library/CloudStorage/GoogleDrive-vishupan3@gmail.com/My Drive/PycharmProjects/Trading/.venv/bin/python</string>
+    <string>-m</string>
+    <string>derivatives_scanner.main</string>
+    <string>--mode</string>
+    <string>auto</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/vishrutpandeymacbook/Library/CloudStorage/GoogleDrive-vishupan3@gmail.com/My Drive/PycharmProjects/Trading</string>
+
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict>
+      <key>Hour</key>
+      <integer>7</integer>
+      <key>Minute</key>
+      <integer>45</integer>
+    </dict>
+    <dict>
+      <key>Hour</key>
+      <integer>11</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Hour</key>
+      <integer>13</integer>
+      <key>Minute</key>
+      <integer>0</integer>
+    </dict>
+    <dict>
+      <key>Hour</key>
+      <integer>15</integer>
+      <key>Minute</key>
+      <integer>35</integer>
+    </dict>
+  </array>
+
+  <key>StandardOutPath</key>
+  <string>/Users/vishrutpandeymacbook/Library/Logs/derivatives-scanner-alerts.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/vishrutpandeymacbook/Library/Logs/derivatives-scanner-alerts.error.log</string>
+</dict>
+</plist>

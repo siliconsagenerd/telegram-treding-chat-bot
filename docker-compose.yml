@@ -1,0 +1,11 @@
+services:
+  trading-bot:
+    build: .
+    volumes:
+      - ./.market_alert.env:/app/.market_alert.env
+      - ./cache:/app/cache
+      - ./stock_data:/app/stock_data
+    restart: always
+    environment:
+      - MARKET_ALERT_ENV_FILE=/app/.market_alert.env
+    command: python derivatives_scanner/core/bot_listener.py
